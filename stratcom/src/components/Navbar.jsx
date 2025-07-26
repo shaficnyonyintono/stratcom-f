@@ -41,7 +41,7 @@ const Navbar = () => {
                 StratCom <span className="text-blue-600">Communications</span>
               </h1>
               <p className="text-xs sm:text-sm text-gray-600 font-medium">
-                and Computer Solutions
+                and Computer Solutions Ltd
               </p>
               <p className="text-xs text-blue-500 font-medium italic mt-0.5 sm:mt-1">
                 "We aspire to inspire"
