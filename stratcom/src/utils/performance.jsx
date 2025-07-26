@@ -70,5 +70,3 @@ export class ErrorBoundary extends React.Component {
     return this.props.children
   }
 }
-
-// This file has been deprecated. Please use performance.jsx instead.

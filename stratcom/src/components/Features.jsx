@@ -7,13 +7,13 @@ const features = [
     icon: "fa-laptop-code", 
     label: "Hands-On Learning", 
     desc: "Real-world projects with cutting-edge technology stacks and industry-standard tools.",
-    color: "from-blue-600 to-cyan-600"
+    color: "from-cyan-700 to-blue-700"
   },
   { 
     icon: "fa-users-gear", 
     label: "Expert Mentorship", 
     desc: "Learn from senior developers and engineers with 10+ years of industry experience.",
-    color: "from-blue-600 to-cyan-600"
+    color: "from-cyan-700 to-blue-700"
   },
   { 
     icon: "fa-certificate", 
