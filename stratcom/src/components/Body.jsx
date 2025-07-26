@@ -223,11 +223,11 @@ const TestimonialCarousel = ({ testimonials }) => {
 
 const Body = () => {
   const [details] = useState({
-    about: 'StratCom Technologies is a leading IT solutions provider in Uganda, established in 2025. We specialize in cutting-edge technology solutions and professional development programs.',
+    about: 'StratCom Technologies is a leading IT solutions provider in Uganda, established in 2014. We specialize in cutting-edge technology solutions and professional development programs.',
     services: 'Web Application Development, Network Infrastructure, IT Consultancy, Mobile App Development, Professional Training & Internship Programs',
-    location: 'Kampala, Uganda - East Africa Technology Hub',
-    email: 'careers@stratcomtech.ug',
-    tel: '+256 740 432 030',
+    location: 'Kampala, Uganda, makerere kavule - UEDCL building 2nd floor',
+    email: 'stuartmcse@gmail.com',
+    tel: '+256752373023',
     id: 1
   });
 
