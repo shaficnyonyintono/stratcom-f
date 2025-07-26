@@ -1,0 +1,220 @@
+/* Emergency Dark Theme Fix - Higher Specificity */
+
+/* Force dark theme with maximum specificity */
+html.dark,
+html.dark *,
+.dark,
+.dark * {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease !important;
+}
+
+/* Root level dark theme */
+html.dark {
+  background-color: #0f172a !important;
+  color: #f1f5f9 !important;
+}
+
+/* Body dark theme */
+html.dark body,
+body.dark-mode {
+  background-color: #0f172a !important;
+  color: #f1f5f9 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Force all white backgrounds to dark in dark mode */
+html.dark .bg-white,
+html.dark [class*="bg-white"],
+.dark .bg-white,
+.dark [class*="bg-white"] {
+  background-color: #1e293b !important;
+}
+
+/* Force all gray backgrounds */
+html.dark .bg-gray-50,
+html.dark .bg-slate-50,
+html.dark [class*="bg-gray-50"],
+html.dark [class*="bg-slate-50"],
+.dark .bg-gray-50,
+.dark .bg-slate-50,
+.dark [class*="bg-gray-50"],
+.dark [class*="bg-slate-50"] {
+  background-color: #334155 !important;
+}
+
+html.dark .bg-gray-100,
+html.dark .bg-slate-100,
+html.dark [class*="bg-gray-100"],
+html.dark [class*="bg-slate-100"],
+.dark .bg-gray-100,
+.dark .bg-slate-100,
+.dark [class*="bg-gray-100"],
+.dark [class*="bg-slate-100"] {
+  background-color: #475569 !important;
+}
+
+/* Force all text colors */
+html.dark .text-gray-900,
+html.dark .text-slate-900,
+html.dark .text-gray-800,
+html.dark .text-slate-800,
+html.dark [class*="text-gray-900"],
+html.dark [class*="text-slate-900"],
+html.dark [class*="text-gray-800"],
+html.dark [class*="text-slate-800"],
+.dark .text-gray-900,
+.dark .text-slate-900,
+.dark .text-gray-800,
+.dark .text-slate-800,
+.dark [class*="text-gray-900"],
+.dark [class*="text-slate-900"],
+.dark [class*="text-gray-800"],
+.dark [class*="text-slate-800"] {
+  color: #f1f5f9 !important;
+}
+
+html.dark .text-gray-700,
+html.dark .text-slate-700,
+html.dark .text-gray-600,
+html.dark .text-slate-600,
+html.dark [class*="text-gray-700"],
+html.dark [class*="text-slate-700"],
+html.dark [class*="text-gray-600"],
+html.dark [class*="text-slate-600"],
+.dark .text-gray-700,
+.dark .text-slate-700,
+.dark .text-gray-600,
+.dark .text-slate-600,
+.dark [class*="text-gray-700"],
+.dark [class*="text-slate-700"],
+.dark [class*="text-gray-600"],
+.dark [class*="text-slate-600"] {
+  color: #cbd5e1 !important;
+}
+
+/* Force borders */
+html.dark .border-gray-200,
+html.dark .border-slate-200,
+html.dark .border-gray-300,
+html.dark .border-slate-300,
+html.dark [class*="border-gray-200"],
+html.dark [class*="border-slate-200"],
+html.dark [class*="border-gray-300"],
+html.dark [class*="border-slate-300"],
+.dark .border-gray-200,
+.dark .border-slate-200,
+.dark .border-gray-300,
+.dark .border-slate-300,
+.dark [class*="border-gray-200"],
+.dark [class*="border-slate-200"],
+.dark [class*="border-gray-300"],
+.dark [class*="border-slate-300"] {
+  border-color: #475569 !important;
+}
+
+/* Force inputs and forms */
+html.dark input,
+html.dark textarea,
+html.dark select,
+html.dark button,
+.dark input,
+.dark textarea,
+.dark select,
+.dark button {
+  background-color: #1e293b !important;
+  color: #f1f5f9 !important;
+  border-color: #475569 !important;
+}
+
+html.dark input:focus,
+html.dark textarea:focus,
+html.dark select:focus,
+.dark input:focus,
+.dark textarea:focus,
+.dark select:focus {
+  border-color: #60a5fa !important;
+  box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.1) !important;
+}
+
+/* Force specific admin panel components */
+html.dark .admin-panel,
+html.dark .admin-content,
+html.dark .admin-card,
+html.dark .card,
+html.dark .panel,
+html.dark .modal,
+html.dark .dropdown,
+.dark .admin-panel,
+.dark .admin-content,
+.dark .admin-card,
+.dark .card,
+.dark .panel,
+.dark .modal,
+.dark .dropdown {
+  background-color: #1e293b !important;
+  color: #f1f5f9 !important;
+  border-color: #475569 !important;
+}
+
+/* Force table styling */
+html.dark table,
+html.dark thead,
+html.dark tbody,
+html.dark tr,
+html.dark th,
+html.dark td,
+.dark table,
+.dark thead,
+.dark tbody,
+.dark tr,
+.dark th,
+.dark td {
+  background-color: #1e293b !important;
+  color: #f1f5f9 !important;
+  border-color: #475569 !important;
+}
+
+html.dark tbody tr:hover,
+.dark tbody tr:hover {
+  background-color: #334155 !important;
+}
+
+/* Force navbar and navigation */
+html.dark nav,
+html.dark .navbar,
+html.dark .navigation,
+.dark nav,
+.dark .navbar,
+.dark .navigation {
+  background-color: #1e293b !important;
+  color: #f1f5f9 !important;
+  border-color: #475569 !important;
+}
+
+/* Toastify notifications */
+html.dark .Toastify__toast,
+.dark .Toastify__toast {
+  background-color: #1e293b !important;
+  color: #f1f5f9 !important;
+}
+
+/* Chart.js adjustments */
+html.dark canvas,
+.dark canvas {
+  filter: brightness(0.8) contrast(1.2) !important;
+}
+
+/* Debug styles */
+html.dark::before {
+  content: "DARK MODE ACTIVE";
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  background: #ef4444;
+  color: white;
+  padding: 4px 8px;
+  font-size: 12px;
+  z-index: 99999;
+  border-radius: 4px;
+}

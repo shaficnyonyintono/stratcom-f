@@ -1,0 +1,87 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+.logoIcon{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-top: 9px;
+    margin-left: 3.5px;
+    margin-right: 5px;
+    border: 2px #fafafa solid;
+    
+    
+}
+.Navbar{
+    background-color: rgb(55, 152, 243);
+    color: rgb(245, 248, 248);
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    
+}
+.container{
+    margin: 0px;
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    height: 90px;
+
+}
+.content{
+    justify-content: space-between;
+    display: flex;
+    flex-direction: row;
+    margin:auto 10px;
+    margin-right: 10px;
+}
+.logo{
+    justify-content: space-between;
+    display: flex;
+}
+.text{
+    font-size: medium;
+    font-weight: 600;
+    font-family: sans-serif;
+    font-size: 20px;
+}
+.navLinks{
+    margin: 0px auto;
+    margin-top: 5.5px;
+}
+.navLinks a{
+    margin-right: 10px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #fafafa;
+    font-weight: 200;
+
+}
+.navLinks a:hover{
+    border-bottom: 1.8px #fafafa solid;
+    box-shadow: 2px 4px 5px rgba(231, 237, 238, 0.511);
+    transform: scale(1.05);
+
+}
+.btn{
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    margin-top: 0px;
+    background-color: rgb(3, 4, 104);
+    color: white;
+    border-radius: 8px;
+    padding: 8px 4px;
+    width: 100px;
+    border: none;
+}
+.btn:hover{
+  background-color: rgb(73, 73, 245);
+  border-radius: 8px;
+  box-shadow: 1px 3px 5px rgba(231, 237, 238, 0.511);  
+}

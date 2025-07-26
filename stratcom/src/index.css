@@ -1,0 +1,304 @@
+@import "tailwindcss";
+@import "./darkmode-force.css";
+
+/* Base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* CSS Variables for Light Theme (Default) */
+:root {
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8fafc;
+  --bg-tertiary: #f1f5f9;
+  --text-primary: #1e293b;
+  --text-secondary: #64748b;
+  --text-muted: #94a3b8;
+  --border-color: #e2e8f0;
+  --border-hover: #cbd5e1;
+  --shadow: rgba(0, 0, 0, 0.1);
+  --accent: #3b82f6;
+  --accent-hover: #2563eb;
+  --success: #10b981;
+  --warning: #f59e0b;
+  --danger: #ef4444;
+}
+
+/* Dark Theme Variables */
+:root.dark,
+.dark {
+  --bg-primary: #0f172a;
+  --bg-secondary: #1e293b;
+  --bg-tertiary: #334155;
+  --text-primary: #f1f5f9;
+  --text-secondary: #cbd5e1;
+  --text-muted: #94a3b8;
+  --border-color: #475569;
+  --border-hover: #64748b;
+  --shadow: rgba(0, 0, 0, 0.3);
+  --accent: #60a5fa;
+  --accent-hover: #3b82f6;
+  --success: #34d399;
+  --warning: #fbbf24;
+  --danger: #f87171;
+}
+
+/* Base body styling */
+html {
+  background-color: var(--bg-primary);
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  background-color: var(--bg-primary) !important;
+  color: var(--text-primary) !important;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  min-height: 100vh;
+  margin: 0;
+}
+
+/* Make sure dark mode body gets the right styles */
+body.dark-mode,
+.dark body {
+  background-color: var(--bg-primary) !important;
+  color: var(--text-primary) !important;
+}
+
+/* Override Tailwind classes for dark mode */
+:root.dark .bg-white,
+.dark .bg-white {
+  background-color: var(--bg-secondary) !important;
+}
+
+:root.dark .bg-gray-50,
+:root.dark .bg-slate-50,
+.dark .bg-gray-50,
+.dark .bg-slate-50 {
+  background-color: var(--bg-tertiary) !important;
+}
+
+:root.dark .bg-gray-100,
+:root.dark .bg-slate-100,
+.dark .bg-gray-100,
+.dark .bg-slate-100 {
+  background-color: var(--bg-secondary) !important;
+}
+
+:root.dark .bg-gray-200,
+:root.dark .bg-slate-200,
+.dark .bg-gray-200,
+.dark .bg-slate-200 {
+  background-color: var(--border-color) !important;
+}
+
+:root.dark .text-gray-900,
+:root.dark .text-slate-900,
+.dark .text-gray-900,
+.dark .text-slate-900 {
+  color: var(--text-primary) !important;
+}
+
+:root.dark .text-gray-800,
+:root.dark .text-slate-800,
+.dark .text-gray-800,
+.dark .text-slate-800 {
+  color: var(--text-primary) !important;
+}
+
+:root.dark .text-gray-700,
+:root.dark .text-slate-700,
+.dark .text-gray-700,
+.dark .text-slate-700 {
+  color: var(--text-secondary) !important;
+}
+
+:root.dark .text-gray-600,
+:root.dark .text-slate-600,
+.dark .text-gray-600,
+.dark .text-slate-600 {
+  color: var(--text-secondary) !important;
+}
+
+:root.dark .text-gray-500,
+:root.dark .text-slate-500,
+.dark .text-gray-500,
+.dark .text-slate-500 {
+  color: var(--text-muted) !important;
+}
+
+:root.dark .border-gray-200,
+:root.dark .border-slate-200,
+:root.dark .border-gray-300,
+:root.dark .border-slate-300,
+.dark .border-gray-200,
+.dark .border-slate-200,
+.dark .border-gray-300,
+.dark .border-slate-300 {
+  border-color: var(--border-color) !important;
+}
+
+/* Input and form elements */
+:root.dark input,
+:root.dark textarea,
+:root.dark select,
+.dark input,
+.dark textarea,
+.dark select {
+  background-color: var(--bg-secondary) !important;
+  border-color: var(--border-color) !important;
+  color: var(--text-primary) !important;
+}
+
+:root.dark input:focus,
+:root.dark textarea:focus,
+:root.dark select:focus,
+.dark input:focus,
+.dark textarea:focus,
+.dark select:focus {
+  border-color: var(--accent) !important;
+  box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.1) !important;
+}
+
+/* Button elements */
+:root.dark button,
+.dark button {
+  background-color: var(--bg-secondary) !important;
+  border-color: var(--border-color) !important;
+  color: var(--text-primary) !important;
+}
+
+:root.dark button:hover,
+.dark button:hover {
+  background-color: var(--bg-tertiary) !important;
+  border-color: var(--border-hover) !important;
+}
+
+/* Modals and overlays */
+:root.dark .modal-overlay,
+.dark .modal-overlay {
+  background-color: rgba(15, 23, 42, 0.75) !important;
+}
+
+:root.dark .modal-content,
+.dark .modal-content {
+  background-color: var(--bg-primary) !important;
+  border-color: var(--border-color) !important;
+}
+
+/* Dropdown menus */
+:root.dark .dropdown-menu,
+.dark .dropdown-menu {
+  background-color: var(--bg-secondary) !important;
+  border-color: var(--border-color) !important;
+  box-shadow: 0 20px 25px -5px var(--shadow), 0 10px 10px -5px var(--shadow) !important;
+}
+
+/* Charts */
+:root.dark canvas,
+.dark canvas {
+  filter: brightness(0.9) contrast(1.1);
+}
+
+/* Scrollbars */
+:root.dark ::-webkit-scrollbar,
+.dark ::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+:root.dark ::-webkit-scrollbar-track,
+.dark ::-webkit-scrollbar-track {
+  background-color: var(--bg-secondary);
+}
+
+:root.dark ::-webkit-scrollbar-thumb,
+.dark ::-webkit-scrollbar-thumb {
+  background-color: var(--border-color);
+  border-radius: 4px;
+}
+
+:root.dark ::-webkit-scrollbar-thumb:hover,
+.dark ::-webkit-scrollbar-thumb:hover {
+  background-color: var(--border-hover);
+}
+
+/* Tables */
+:root.dark table,
+.dark table {
+  background-color: var(--bg-primary) !important;
+}
+
+:root.dark thead,
+.dark thead {
+  background-color: var(--bg-secondary) !important;
+}
+
+:root.dark tbody tr,
+.dark tbody tr {
+  border-color: var(--border-color) !important;
+}
+
+:root.dark tbody tr:hover,
+.dark tbody tr:hover {
+  background-color: var(--bg-tertiary) !important;
+}
+
+/* Cards and panels */
+:root.dark .card,
+:root.dark .panel,
+.dark .card,
+.dark .panel {
+  background-color: var(--bg-secondary) !important;
+  border-color: var(--border-color) !important;
+}
+
+/* Toast notifications - ensure they work in dark mode */
+:root.dark .Toastify__toast,
+.dark .Toastify__toast {
+  background-color: var(--bg-secondary) !important;
+  color: var(--text-primary) !important;
+}
+
+:root.dark .Toastify__toast--success,
+.dark .Toastify__toast--success {
+  background-color: var(--success) !important;
+  color: #ffffff !important;
+}
+
+:root.dark .Toastify__toast--error,
+.dark .Toastify__toast--error {
+  background-color: var(--danger) !important;
+  color: #ffffff !important;
+}
+
+:root.dark .Toastify__toast--warning,
+.dark .Toastify__toast--warning {
+  background-color: var(--warning) !important;
+  color: #ffffff !important;
+}
+
+/* Special classes for admin components */
+.admin-card {
+  background-color: var(--bg-secondary);
+  border-color: var(--border-color);
+  color: var(--text-primary);
+}
+
+.admin-input {
+  background-color: var(--bg-secondary);
+  border-color: var(--border-color);
+  color: var(--text-primary);
+}
+
+.admin-button {
+  background-color: var(--bg-secondary);
+  border-color: var(--border-color);
+  color: var(--text-primary);
+}
+
+.admin-button:hover {
+  background-color: var(--bg-tertiary);
+  border-color: var(--border-hover);
+}

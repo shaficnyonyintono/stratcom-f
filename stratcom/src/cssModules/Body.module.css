@@ -1,0 +1,38 @@
+.about{
+    
+    margin-top: 10px;
+    width: 450px;
+    height: auto;
+    padding: 10px 16px;
+    
+}
+.about h1{
+    font-size: 50px;
+
+}
+.about p{
+    font-size: 20px;
+}
+.about:hover{
+    box-shadow: 2px 4px 5px rgba(231, 237, 238, 0.511);
+
+}
+.slider{
+    width:50%;
+    margin:20px   auto;
+    margin-top: 60px;
+    border: none;
+    background:none;
+    
+    border-radius: 15px;
+    
+    
+
+}
+.container{
+    border-bottom: 1px grey solid;
+    flex-wrap: wrap;
+    display: flex;
+    flex-direction: row;
+    margin-top: 60px;
+}

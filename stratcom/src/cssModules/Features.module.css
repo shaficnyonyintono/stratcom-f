@@ -1,0 +1,36 @@
+.featureCard{
+    
+    margin:auto 20px;
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    justify-content: center;
+}
+.Content h2{
+    font-weight: 600;
+    text-align: center;
+}
+.Content{
+   
+    margin-top: 60px;
+
+}
+
+
+.Content p{
+    font-size: 20px;
+    text-align: center;
+}
+.imageSection img{
+    margin-top: 20px;
+    width:550px;
+    height:320px;
+    border-radius: 20px;
+}
+.container{
+    height: 400px;
+    gap: 10px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
