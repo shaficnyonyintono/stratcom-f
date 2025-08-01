@@ -2,9 +2,9 @@
 import React, { memo, lazy, useState, useEffect } from 'react'
 
 // Lazy load components for better performance
-export const LazyAdminPanel = lazy(() => import('./AdminPanel'))
-export const LazyApplication = lazy(() => import('./Application'))
-export const LazySettingsPanel = lazy(() => import('./SettingsPanel'))
+export const LazyAdminPanel = lazy(() => import('../components/AdminPanel'))
+export const LazyApplication = lazy(() => import('../components/Application'))
+export const LazySettingsPanel = lazy(() => import('../components/SettingsPanel'))
 
 // Memoized component wrapper
 export const MemoizedComponent = memo(({ children, ...props }) => {
