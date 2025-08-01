@@ -4,17 +4,44 @@ import ImageSlider from './ImageSlider'
 import About from './About'
 import Features from './Features'
 import WhyChooseStratcom from './WhyChooseStratcom'
+import engineer from '../engineer.jpg';
+import router from '../router.jpg';
+import swtch from '../switch.jpg';
+import codes from '../codes.jpg';
+import rack from '../rack.jpg'
+
+const techImages = [engineer, router, rack, codes];
+
+const BackgroundCarousel = () => {
+  const [current, setCurrent] = useState(0);
+
+  React.useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % techImages.length);
+    }, 4000);
+    return () => clearInterval(interval);
+  }, []);
+
+  return (
+    <div className="absolute inset-0 w-full h-full z-0">
+      {techImages.map((img, idx) => (
+        <img
+          key={idx}
+          src={img}
+          alt={`tech-bg-${idx}`}
+          className={`object-cover w-full h-full absolute transition-opacity duration-1000 ${idx === current ? 'opacity-90' : 'opacity-0'}`}
+          style={{ filter: 'blur(1.5px) brightness(0.5)' }}
+        />
+      ))}
+      <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800 opacity-20"></div>
+    </div>
+  );
+};
 
 // Modern Hero Section with Professional Design
 const Hero = () => (
-  <section className="relative h-[65vh] pt-[40px] lg:pt-0 bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800 overflow-hidden">
-    {/* Animated Background Elements */}
-    <div className="absolute inset-0">
-      <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-600/20 rounded-full blur-3xl animate-pulse"></div>
-      <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-cyan-500/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
-      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-to-r from-blue-600/10 to-cyan-600/10 rounded-full blur-3xl"></div>
-    </div>
-    
+  <section className="relative h-[65vh] pt-[40px] lg:pt-0 overflow-hidden">
+    <BackgroundCarousel />
     {/* Grid Pattern Overlay */}
     <div className="absolute inset-0 opacity-20">
       <div className="w-full h-full" style={{
@@ -25,13 +52,13 @@ const Hero = () => (
     <div className="relative z-10 container mx-auto px-4 lg:px-6 py-4 lg:py-8 flex flex-col items-center justify-center h-full text-center">
       {/* Main Heading */}
       <div className="mb-1 lg:mb-2" data-aos="fade-up" data-aos-delay="100">
-        <h1 className="text-3xl md:text-4xl lg:text-6xl font-black text-white mb-1 lg:mb-2 leading-tight">
+        <h1 className="text-3xl md:text-4xl lg:text-6xl font-extrabold text-white mb-1 lg:mb-2 leading-tight drop-shadow-lg">
           Launch Your
-          <span className="block bg-gradient-to-r from-blue-400 via-cyan-400 to-blue-500 bg-clip-text text-transparent">
+          <span className="block bg-gradient-to-r from-blue-400 via-cyan-400 to-blue-500 bg-clip-text text-transparent font-extrabold drop-shadow-lg">
             Tech Career
           </span>
         </h1>
-        <p className="text-sm md:text-lg lg:text-xl text-slate-300 max-w-2xl lg:max-w-3xl mx-auto leading-relaxed">
+        <p className="text-sm md:text-lg lg:text-xl text-white font-bold max-w-2xl lg:max-w-3xl mx-auto leading-relaxed drop-shadow-lg">
           Join StratCom's elite internship program. Work with cutting-edge technology, 
           learn from industry experts, and build the skills that matter in today's digital world.
         </p>
@@ -94,9 +121,9 @@ const ServicesOverview = () => (
           Comprehensive IT solutions and training programs designed to accelerate your career growth
         </p>
       </div>
-      
       <div className="grid grid-cols-1 md:grid-cols-3 gap-3 lg:gap-4">
-        <div className="group p-3 lg:p-5 bg-gradient-to-br from-blue-50 to-cyan-50 rounded-xl lg:rounded-2xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2" data-aos="fade-up" data-aos-delay="100">
+        <div className="group p-3 lg:p-5 bg-gradient-to-br from-blue-50 to-cyan-50 rounded-xl lg:rounded-2xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 flex flex-col items-center" data-aos="fade-up" data-aos-delay="100">
+          {/* Removed tech image */}
           <div className="w-10 h-10 lg:w-16 lg:h-16 bg-blue-600 rounded-lg lg:rounded-xl flex items-center justify-center mb-2 lg:mb-4 group-hover:scale-110 transition-transform">
             <i className="fas fa-code text-white text-sm lg:text-2xl"></i>
           </div>
@@ -105,8 +132,8 @@ const ServicesOverview = () => (
             Master modern web technologies including React, Node.js, and cloud deployment strategies.
           </p>
         </div>
-        
-        <div className="group p-3 lg:p-5 bg-gradient-to-br from-blue-50 to-cyan-50 rounded-xl lg:rounded-2xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2" data-aos="fade-up" data-aos-delay="200">
+        <div className="group p-3 lg:p-5 bg-gradient-to-br from-blue-50 to-cyan-50 rounded-xl lg:rounded-2xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 flex flex-col items-center" data-aos="fade-up" data-aos-delay="200">
+          {/* Removed tech image */}
           <div className="w-10 h-10 lg:w-16 lg:h-16 bg-blue-600 rounded-lg lg:rounded-xl flex items-center justify-center mb-2 lg:mb-4 group-hover:scale-110 transition-transform">
             <i className="fas fa-network-wired text-white text-sm lg:text-2xl"></i>
           </div>
@@ -115,8 +142,8 @@ const ServicesOverview = () => (
             Learn routing, switching, and network security with hands-on enterprise equipment.
           </p>
         </div>
-        
-        <div className="group p-3 lg:p-5 bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl lg:rounded-2xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2" data-aos="fade-up" data-aos-delay="300">
+        <div className="group p-3 lg:p-5 bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl lg:rounded-2xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 flex flex-col items-center" data-aos="fade-up" data-aos-delay="300">
+          {/* Removed tech image */}
           <div className="w-10 h-10 lg:w-16 lg:h-16 bg-green-600 rounded-lg lg:rounded-xl flex items-center justify-center mb-2 lg:mb-4 group-hover:scale-110 transition-transform">
             <i className="fas fa-mobile-alt text-white text-sm lg:text-2xl"></i>
           </div>
@@ -223,11 +250,11 @@ const TestimonialCarousel = ({ testimonials }) => {
 
 const Body = () => {
   const [details] = useState({
-    about: 'StratCom Technologies is a leading IT solutions provider in Uganda, established in 2014. We specialize in cutting-edge technology solutions and professional development programs.',
+    about: 'StratCom is a registered IT company in Uganda, with a tech hub fully equipped with advanced IT equipment and top-of-the-line tech devices for memorable internship experience .',
     services: 'Web Application Development, Network Infrastructure, IT Consultancy, Mobile App Development, Professional Training & Internship Programs',
-    location: 'Kampala, Uganda, makerere kavule - UEDCL building 2nd floor',
+    location: 'Bombo Rd,Makerere Kavule Kampala Uganda, UEDCL building 2nd floor',
     email: 'stuartmcse@gmail.com',
-    tel: '+256752373023',
+    tel: '+256 752373023',
     id: 1
   });
 
@@ -264,10 +291,130 @@ const Body = () => {
       <ServicesOverview />
       <WhyChooseStratcom />
       
-      {/* About Section */}
-      <section id="about" className="py-4 lg:py-6 bg-white" data-aos="fade-up">
-        <div className="container mx-auto px-4 lg:px-6">
-          <About data={details} />
+      {/* About Section - Modern Card Layout with Mission & Vision */}
+      <section id="about" className="py-16 lg:py-20 bg-gradient-to-br from-slate-50 via-blue-50 to-cyan-50" data-aos="fade-up">
+        <div className="container mx-auto px-4 lg:px-8">
+          {/* Section Header */}
+          <div className="text-center mb-12 lg:mb-16" data-aos="fade-up">
+            <div className="inline-flex items-center px-4 py-2 bg-blue-100 text-blue-800 rounded-full text-sm font-semibold mb-4">
+              <i className="fas fa-building mr-2"></i>
+              About Us
+            </div>
+            <h2 className="text-4xl lg:text-6xl font-extrabold text-slate-900 mb-4 leading-tight">
+              StratCom <span className="text-blue-600">Technologies</span>
+            </h2>
+            <p className="text-lg lg:text-xl text-slate-600 max-w-3xl mx-auto">
+              {details.about}
+            </p>
+          </div>
+
+          {/* Three Column Layout */}
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
+            {/* Company Image */}
+            <div className="lg:col-span-1" data-aos="fade-right" data-aos-delay="100">
+              <div className="relative group">
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-400 to-cyan-500 rounded-2xl transform rotate-3 group-hover:rotate-6 transition-transform duration-300"></div>
+                <div className="relative rounded-2xl overflow-hidden shadow-2xl bg-white p-2">
+                  <img src={engineer} alt="StratCom Team" className="object-cover w-full h-64 lg:h-80 rounded-xl" />
+                </div>
+              </div>
+            </div>
+
+            {/* Mission Card */}
+            <div className="lg:col-span-1" data-aos="fade-up" data-aos-delay="200">
+              <div className="bg-white rounded-2xl shadow-xl p-8 h-full border-t-4 border-cyan-500 hover:shadow-2xl transition-shadow duration-300">
+                <div className="flex items-center mb-4">
+                  <div className="w-12 h-12 bg-cyan-500 rounded-xl flex items-center justify-center mr-4">
+                    <i className="fas fa-bullseye text-white text-xl"></i>
+                  </div>
+                  <h3 className="text-2xl font-bold text-slate-900">Our Mission</h3>
+                </div>
+                <p className="text-slate-700 leading-relaxed mb-6">
+                  To empower organizations and individuals through innovative ICT solutions, reliable infrastructure, and transformative training for the digital age.
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  <span className="px-3 py-1 bg-cyan-100 text-cyan-800 rounded-full text-sm">Innovation</span>
+                  <span className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">Excellence</span>
+                  <span className="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm">Growth</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Vision Card */}
+            <div className="lg:col-span-1" data-aos="fade-left" data-aos-delay="300">
+              <div className="bg-white rounded-2xl shadow-xl p-8 h-full border-t-4 border-blue-500 hover:shadow-2xl transition-shadow duration-300">
+                <div className="flex items-center mb-4">
+                  <div className="w-12 h-12 bg-blue-500 rounded-xl flex items-center justify-center mr-4">
+                    <i className="fas fa-eye text-white text-xl"></i>
+                  </div>
+                  <h3 className="text-2xl font-bold text-slate-900">Our Vision</h3>
+                </div>
+                <p className="text-slate-700 leading-relaxed mb-6">
+                  To be the leading provider of technology-driven growth and digital transformation in East Africa.
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  <span className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">Leadership</span>
+                  <span className="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-sm">Transformation</span>
+                  <span className="px-3 py-1 bg-indigo-100 text-indigo-800 rounded-full text-sm">Future</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Services & Contact Section */}
+          <div className="mt-12 lg:mt-16" data-aos="fade-up" data-aos-delay="400">
+            <div className="bg-white rounded-2xl shadow-xl p-8 lg:p-12">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+                {/* Services */}
+                <div>
+                  <h3 className="text-2xl lg:text-3xl font-bold text-slate-900 mb-6 flex items-center">
+                    <i className="fas fa-cogs text-blue-500 mr-3"></i>
+                    Our Services
+                  </h3>
+                  <ul className="space-y-3">
+                    <li className="flex items-center text-slate-700 text-lg">
+                      <i className="fas fa-check-circle text-blue-500 mr-3"></i> 
+                      Web Application Development
+                    </li>
+                    <li className="flex items-center text-slate-700 text-lg">
+                      <i className="fas fa-check-circle text-blue-500 mr-3"></i> 
+                      Network Infrastructure & Security
+                    </li>
+                    <li className="flex items-center text-slate-700 text-lg">
+                      <i className="fas fa-check-circle text-blue-500 mr-3"></i> 
+                      Mobile App Development
+                    </li>
+                    <li className="flex items-center text-slate-700 text-lg">
+                      <i className="fas fa-check-circle text-blue-500 mr-3"></i> 
+                      Professional Training & Internship Programs
+                    </li>
+                  </ul>
+                </div>
+                
+                {/* Contact Information */}
+                <div>
+                  <h3 className="text-2xl lg:text-3xl font-bold text-slate-900 mb-6 flex items-center">
+                    <i className="fas fa-map-marker-alt text-green-500 mr-3"></i>
+                    Get In Touch
+                  </h3>
+                  <div className="space-y-4">
+                    <div className="flex items-center p-4 bg-cyan-50 rounded-xl">
+                      <i className="fas fa-map-marker-alt text-cyan-600 text-xl mr-4"></i>
+                      <span className="text-slate-700 font-medium">{details.location}</span>
+                    </div>
+                    <div className="flex items-center p-4 bg-blue-50 rounded-xl">
+                      <i className="fas fa-envelope text-blue-600 text-xl mr-4"></i>
+                      <span className="text-slate-700 font-medium">{details.email}</span>
+                    </div>
+                    <div className="flex items-center p-4 bg-green-50 rounded-xl">
+                      <i className="fas fa-phone text-green-600 text-xl mr-4"></i>
+                      <span className="text-slate-700 font-medium">{details.tel}</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
       

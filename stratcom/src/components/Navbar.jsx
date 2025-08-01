@@ -41,7 +41,7 @@ const Navbar = () => {
                 StratCom <span className="text-blue-600">Communications</span>
               </h1>
               <p className="text-xs sm:text-sm text-gray-600 font-medium">
-                and Computer Solutions Ltd
+                and Computer Solutions
               </p>
               <p className="text-xs text-blue-500 font-medium italic mt-0.5 sm:mt-1">
                 "We aspire to inspire"
@@ -51,16 +51,18 @@ const Navbar = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-1">
-            <Link
-              to="/"
-              className={`px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-200 ${
-                isActive('/') 
-                  ? 'bg-blue-100 text-blue-700 shadow-sm' 
-                  : 'text-gray-700 hover:text-blue-600 hover:bg-gray-50'
-              }`}
-            >
-              <i className="fas fa-home mr-2"></i>Home
-            </Link>
+            {location.pathname === '/application' && (
+              <Link
+                to="/"
+                className={`px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-200 ${
+                  isActive('/') 
+                    ? 'bg-blue-100 text-blue-700 shadow-sm' 
+                    : 'text-gray-700 hover:text-blue-600 hover:bg-gray-50'
+                }`}
+              >
+                <i className="fas fa-home mr-2"></i>Home
+              </Link>
+            )}
             
             {location.pathname === '/' && (
               <>
@@ -129,15 +131,17 @@ const Navbar = () => {
             </div>
             
             <div className="px-4 py-3 space-y-1">
-              <Link
-                to="/"
-                className={`flex items-center px-4 py-3 rounded-lg text-sm font-semibold transition-colors ${
-                  isActive('/') ? 'bg-blue-100 text-blue-700' : 'text-gray-700 hover:bg-gray-50'
-                }`}
-                onClick={() => setMenuOpen(false)}
-              >
-                <i className="fas fa-home mr-3 w-5"></i>Home
-              </Link>
+              {location.pathname === '/application' && (
+                <Link
+                  to="/"
+                  className={`flex items-center px-4 py-3 rounded-lg text-sm font-semibold transition-colors ${
+                    isActive('/') ? 'bg-blue-100 text-blue-700' : 'text-gray-700 hover:bg-gray-50'
+                  }`}
+                  onClick={() => setMenuOpen(false)}
+                >
+                  <i className="fas fa-home mr-3 w-5"></i>Home
+                </Link>
+              )}
               
               {location.pathname === '/' && (
                 <>
