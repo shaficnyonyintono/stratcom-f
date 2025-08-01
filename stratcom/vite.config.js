@@ -27,7 +27,7 @@ export default defineConfig({
           // Split vendor chunks for better caching
           'react-vendor': ['react', 'react-dom'],
           'chart-vendor': ['chart.js', 'react-chartjs-2'],
-          'utils': ['./src/utils/performance.js', './src/utils/adminOptimizations.js'],
+          'utils': ['./src/utils/performance.jsx', './src/utils/adminOptimizations.jsx'],
         },
       },
     },
